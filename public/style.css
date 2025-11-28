@@ -1,207 +1,151 @@
-/* public/style.css */
+/* ================================
+   Estilo Moderno - Mural de Recados
+   ================================ */
 
- 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-
-    font-family: Arial, sans-serif;
-
-    margin: 0;
-
-    padding: 20px; /* Espaçamento para telas de celular */
-
-    background-color: #f4f4f4;
-
+    font-family: "Inter", Arial, sans-serif;
+    background: linear-gradient(135deg, #4a90e2, #6ec6ff);
+    padding: 25px;
     color: #333;
-
 }
 
- 
-
+/* CONTAINER PRINCIPAL */
 .container {
-
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    background-color: #fff;
-
-    border-radius: 8px;
-
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease;
 }
 
- 
-
+/* HEADER */
 header {
-
-    background-color: #4a90e2;
-
-    color: white;
-
-    padding: 20px;
-
+    background: #ffffff10;
+    padding: 25px;
     text-align: center;
-
-    border-radius: 8px 8px 0 0;
-
+    border-radius: 16px 16px 0 0;
+    color: white;
+    backdrop-filter: blur(6px);
 }
-
- 
 
 header h1 {
-
-    margin: 0;
-
-    font-size: 1.8rem;
-
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1b1f23; /* Título escuro */
 }
 
- 
 
-/* Estilos do Formulário (Mobile-First) */
-
+/* FORMULÁRIO */
 .form-container {
-
-    padding: 20px;
-
-    border-bottom: 1px solid #eee;
-
+    padding: 25px;
 }
-
- 
 
 .form-group {
-
-    margin-bottom: 15px;
-
+    margin-bottom: 18px;
 }
 
- 
-
-.form-group label {
-
+label {
+    font-weight: 600;
     display: block;
-
-    margin-bottom: 5px;
-
-    font-weight: bold;
-
+    margin-bottom: 7px;
+    color: #444;
 }
 
- 
-
-.form-group input,
-
-.form-group textarea {
-
+input,
+textarea {
     width: 100%;
-
-    padding: 10px;
-
-    box-sizing: border-box; /* Evita que o padding quebre o layout */
-
-    border: 1px solid #ccc;
-
-    border-radius: 4px;
-
-}
-
- 
-
-.btn {
-
-    width: 100%;
-
     padding: 12px;
-
-    background-color: #34a853;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 4px;
-
+    border-radius: 8px;
+    border: 2px solid #dfe3e8;
+    transition: 0.2s;
     font-size: 1rem;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s;
-
 }
 
- 
+input:focus,
+textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px #4a90e288;
+}
+
+/* BOTÃO */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #4a90e2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
 
 .btn:hover {
-
-    background-color: #2c8e47;
-
+    background: #3578c0;
+    transform: scale(1.02);
 }
 
- 
-
-/* Estilos da Lista de Recados */
-
+/* LISTA DE RECADOS */
 .recados-container {
-
-    padding: 20px;
-
+    padding: 25px;
 }
 
- 
+.recados-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
 
-/* * O "Card" de cada recado
-
- */
-
+/* CARD DOS RECADOS */
 .recado-item {
-
-    background-color: #f9f9f9;
-
-    border: 1px solid #ddd;
-
-    border-radius: 5px;
-
-    padding: 15px;
-
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
     margin-bottom: 15px;
-
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-
+    border-left: 6px solid #4a90e2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    animation: slideIn 0.4s ease;
 }
 
- 
-
-.recado-item p { /* O texto da mensagem */
-
-    margin: 0 0 10px 0;
-
+.recado-item p {
     font-size: 1.1rem;
-
-    word-wrap: break-word; /* Garante que palavras longas quebrem */
-
+    margin-bottom: 10px;
 }
-
- 
 
 .recado-item .info {
-
-    font-size: 0.9rem;
-
-    color: #777;
-
     text-align: right;
-
+    color: #666;
+    font-size: 0.95rem;
 }
 
- 
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-.recado-item .info strong {
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
 
-    color: #555;
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
 
+    .container {
+        border-radius: 10px;
+    }
 }
